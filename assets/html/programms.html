@@ -1,0 +1,51 @@
+<section id="one">
+    <div class="container animated zoomIn">
+        <header class="major">
+            <h2>Программы</h2>
+        </header>
+        <p style="font-style: italic">Обнаженная девушка искусно разминает Вас с нежностью кошки.
+            <br>После расслабления ваших мышц, она смазывает свое тело маслом и начинает массаж при помощи ягодиц, груди и живота.
+            <br>Ваше тело покрывают нежными поцелуями...
+            <br>Так, начинаются наши путешествия, а Вам остаётся лишь выбрать Мир, в который Вы хотите сегодня попасть.
+            <br>Время проведённое со спутницей: <span class="colored">30 - 120 минут</span>.
+            <br> Чем дольше, длится приключение, тем больше, разнообразных эротических техник, сможет показать прекрасная дева.
+            <br>Если ваша дорога, занимает более часа, то Вы получаете <span class="colored">комплимент от салона:</span>
+            <ul style="margin: 10px 0px 0px 10px !important; list-style: none" class="colored">
+                <li><img src="/images/stones.png">сила камней душ</li>
+                <li><img src="/images/hookah.png">дыхание паровой птицы</li>
+                <li><img src="/images/spa.png">очищающий эликсир энергии</li>
+            </ul>
+            <br> При вашем желании, проводница по мирам эротических фантазий может пригласить свою компаньонку!
+            <br>Установленные у нас цены на массаж – это символическая плата за счастливый билет в мир исключительного блаженства.</p>
+    </div>
+    <div id="all-programms" class="container box alt">
+        <div class="row 50% uniform" ng-repeat="row in rowCount track by $index">
+            <a style="border-bottom: none; cursor: pointer" ng-click="scroll(programm)" class="4u" ng-repeat="programm in getProgrammsByIndex($index)">
+                <span class="image fit">
+                    <img src="{{programms[programm].image}}" alt="">
+                    <span style="position: absolute; top: 10px; left: 10px">{{programms[programm].header}}</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="three">
+    <div class="container">
+        <div class="features">
+            <article class="animated bounceInLeft" id="{{$index}}" ng-repeat="programm in programms track by $index">
+                <a href="#" class="image"><img src="{{programm.image}}" alt=""></a>
+                <div class="inner">
+                    <h4 ng-bind="programm.header"></h4>
+                    <p ng-repeat="description in programm.description" ng-bind="description"></p>
+                    <!--
+                    <p ng-if="isSingleTime(programm)" class="program-time"><span class="fa fa-clock-o"></span>&nbsp;{{programm.time}} минут</p>
+                    <p ng-if="!isSingleTime(programm)" class="program-time" ng-repeat="(time, price) in programm.time"><span class="fa fa-clock-o"></span>&nbsp;{{time}} минут - {{price}}₽</p>
+                    <p class="program-girls" ng-if="programm.price">
+                        <span ng-repeat="(count, price) in programm.price"><span ng-repeat="time in getNumber(count) track by $index" class="fa fa-female"></span> {{price}}₽&nbsp;&nbsp;&nbsp;</span>
+                    </p>-->
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

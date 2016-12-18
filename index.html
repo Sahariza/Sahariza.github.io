@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="app" ng-controller="mainController" prefix="og: http://ogp.me/ns#" ng-cloak>
+
+<head>
+    <title>Holostyak - Первый и единственный проект в оказании услуг элитного массажа премиум класса в городе Якутск</title>
+    <meta property="og:title" content="Holostyak - салон эротического массажа" />
+    <meta property="og:type" content="Первый и единственный проект в оказании услуг элитного массажа премиум класса в городе Якутск" />
+    <meta property="og:image" content="http://holostyak.org/assets/logos/3.png" />
+    <meta name="keywords" content="якутск, эротический массаж в якутске, пип шоу, лесби шоу, салон эротического массажа, якутск, индигирка, олонхо, жеребятина, развлечения, знакомства, девушки, красивые девушки, лесби, девушка трогает себя, девушка мастурбирует, провести вечер, ночь, сквирт, массаж, досуг с девушкой, струйный оргазм, оргазм, элитный досуг, релакс, гармония, страсть, эротика, ласки"
+    />
+    <meta name="description" content="Holostyak это уникальный, первый и единственный проект в оказании услуг элитного массажа пр емиум класса в городе Якутск.
+С нами, вы забудьте о реальности будней и побалуете себя восхитительным эротическим и оздоровительным массажем. Пусть, это будет Вашим маленьким секретом, доставляющим огромное удовольствие…
+Наши девушки в совершенстве владеют искусством чувственных эротических ласк. Их призвание — дарить наслаждение, выражением своих чувств на языке нежных и умелых прикосновений. Они доставят Вам фантастическое блаженство по методикам проверенным временем."
+    />
+    <meta charset="utf-8" />
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-carousel/1.0.1/angular-carousel.min.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/thatisuday/ng-image-gallery/master/dist/ng-image-gallery.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        #one:before {
+            background-image: url("{{config.banner}}");
+            background-size: contain;
+        }
+        
+        .ng-image-gallery .ng-image-gallery-thumbnails .thumb {
+            width: 250px !important;
+            height: 250px !important;
+        }
+        
+        .ng-image-gallery.inline .ng-image-gallery-modal {
+            height: 600px !important;
+        }
+    </style>
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body id="page-top">
+    <div ng-if="!adult" class="modal">
+        <div id="adult-check">
+            <h2>Вам уже исполнилось 18 лет?</h2>
+            <ul class="actions">
+                <li ng-click="confirmAdult()"><a href="#" class="button special">Да, войти на сайт</a></li>
+                <li onclick="window.location.href='https://google.ru/'"><a href="#" class="button">Нет, покинуть сайт</a></li>
+            </ul>
+        </div>
+    </div>
+    <div ng-if="adult">
+        <div title="{{sound.paused ? 'Играть музыку' : 'Поставить музыку на паузу'}}" ng-class="sound.paused ? 'play' : 'pause'" class="control" ng-click="toggle()">
+            <span class="fa fa-play animated zoomIn" ng-if="sound.paused"></span>
+            <span class="fa fa-pause animated zoomIn" ng-if="!sound.paused"></span>
+        </div>
+        <a title="Наверх" onclick="$('html, body').animate({ scrollTop: 0 }, 'slow');" class="move-top">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="triangle-1"></div>
+        <div class="triangle-2"></div>
+        </a>
+
+        <!-- Header -->
+        <section id="header">
+            <header class="animated zoomIn">
+                <span class="image avatar"><img src="assets/logos/3.png" alt="" /></span>
+                <h1 id="logo"><a style="color: black;">Holostyak</a></h1>
+                <p style="color: black;">мужской клуб</p>
+                <span class="join">WhatsApp/sms</span>
+                <br>
+                <span>8 (924) 175-10-05</span>
+                <br>
+                <span class="join">Vkontakte</span>
+                <br>
+                <span>vk.com/massage_14</span>
+                <br>
+                <span class="join">Запись</span>
+                <br>
+                <span>с 10 до 22</span>
+            </header>
+            <nav id="nav" class="animated zoomIn">
+                <ul>
+                    <li ui-sref-active="active bounce animated" ui-sref="app.main"><a>О нас</a></li>
+                    <li ui-sref-active="active bounce animated" ui-sref="app.programms"><a>Программы</a></li>
+                    <li ui-sref-active="active bounce animated" ui-sref="app.girls"><a>Девушки</a></li>
+                    <li ui-sref-active="active bounce animated" ui-sref="app.rules"><a>Правила</a></li>
+                </ul>
+            </nav>
+        </section>
+        <div id="wrapper">
+            <div id="main">
+                <div ui-view></div>
+            </div>
+            <section id="footer">
+                <hr>
+                <div class="container">
+                    <p><i class="fa fa-venus-mars" aria-hidden="true"></i> Салон Holostyak не оказывает услуг сексуального характера</p>
+                    <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Информация предоставлена для лиц, старше 18</p>
+                    <ul class="copyright">
+                        <li>© Holostyak. Все права защищены.</li>
+                        <li>Дизайн: <a target="_blank" href="http://html5up.net">HTML5 UP</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+    <div id="vk_community_messages"></div>
+    <script type="text/javascript">
+        VK.Widgets.CommunityMessages("vk_community_messages", 107425805, {});
+    </script>
+
+    <!-- Wrapper -->
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollzer.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.rawgit.com/1001v/Range.js/888a810/dist/range.es5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.min.js"></script>
+    <script src="https://cdn.rawgit.com/thatisuday/ng-image-gallery/master/dist/ng-image-gallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-touch.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-audio/1.7.3/angular.audio.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-toastr/2.1.1/angular-toastr.tpls.min.js"></script>
+
+    <script src="assets/js/app/app.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter41661559 = new Ya.Metrika({
+                        id: 41661559,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true,
+                        trackHash: true
+                    });
+                } catch (e) {}
+            });
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function() {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+    </script> <noscript><div><img src="https://mc.yandex.ru/watch/41661559" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+
+</html>
