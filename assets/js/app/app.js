@@ -22,6 +22,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         url: '/girls',
         templateUrl: '/assets/html/girls.html',
         controller: function controller($scope, $getDataService, $interval) {
+            $scope.methods = {};
             $getDataService('/data/girls.json', function (err, data) {
                 $scope.girlsImages = data || [];
                 console.log(data);
