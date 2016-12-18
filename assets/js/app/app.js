@@ -21,11 +21,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     }).state('app.girls', {
         url: '/girls',
         templateUrl: '/assets/html/girls.html',
-        controller: function controller($scope, $getDataService) {
+        controller: function controller($scope, $getDataService, $interval) {
             $getDataService('/data/girls.json', function (err, data) {
                 $scope.girlsImages = data || [];
                 console.log(data);
             });
+            $interval(function() {
+                $(".ng-image-gallery-content div.next").click();
+            }, 3000);
         }
     }).state('app.programms', {
         url: '/programms',
