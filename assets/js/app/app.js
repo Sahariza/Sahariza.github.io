@@ -27,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 console.log(data);
             });
             $interval(function() {
-                $(".ng-image-gallery-content div.next").click();
+                $scope.methods.next();
             }, 3000);
         }
     }).state('app.programms', {
