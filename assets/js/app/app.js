@@ -81,7 +81,7 @@ app.controller('mainController', function ($scope, ngAudio, $getDataService) {
 
 app.factory('$getDataService', function ($http) {
     return function (url, callback) {
-        $http.get(url).then(function (response) {
+        $http.get(url + "?" + Date.now()).then(function (response) {
             return callback(null, response.data);
         }).catch(function (err) {
             return callback(err);
