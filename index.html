@@ -112,6 +112,20 @@
             </section>
         </div>
     </div>
+    <script>
+        (function() {
+            var redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            if (redirect && redirect != location.href) {
+                history.replaceState(null, null, redirect);
+                // REMOVE THIS - just showing the redirect route in the UI
+                document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
+            } else {
+                // REMOVE THIS - just showing the redirect route in the UI
+                document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
+            }
+        })();
+    </script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
     <div id="vk_community_messages"></div>
     <script type="text/javascript">
